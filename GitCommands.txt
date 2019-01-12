@@ -1,0 +1,322 @@
+
+sanje@LAPTOP-6SDS2CFL MINGW64 ~/OneDrive/Desktop
+$ cd /c
+cd
+sanje@LAPTOP-6SDS2CFL MINGW64 /c
+$ cd my-git
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git
+$ ls -la
+total 8
+drwxr-xr-x 1 sanje 197609 0 Jan 10 18:31 ./
+drwxr-xr-x 1 sanje 197609 0 Jan 12 10:23 ../
+drwxr-xr-x 1 sanje 197609 0 Jan 11 16:06 Testing1/
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git
+$ cd testing1
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/testing1 (master)
+$ ls -la
+total 5
+drwxr-xr-x 1 sanje 197609  0 Jan 11 16:06 ./
+drwxr-xr-x 1 sanje 197609  0 Jan 10 18:31 ../
+drwxr-xr-x 1 sanje 197609  0 Jan 11 16:18 .git/
+-rw-r--r-- 1 sanje 197609  0 Jan 11 16:09 .gitignore
+-rw-r--r-- 1 sanje 197609 26 Jan 11 16:10 Test1.txt
+-rw-r--r-- 1 sanje 197609  0 Jan 11 16:03 Test2.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/testing1 (master)
+$ cd ..
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git
+$ git clone git@github.com:sanjeevareddy229/Projects.git
+Cloning into 'Projects'...
+The authenticity of host 'github.com (192.30.253.113)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git
+$ ls -la
+total 8
+drwxr-xr-x 1 sanje 197609 0 Jan 12 10:34 ./
+drwxr-xr-x 1 sanje 197609 0 Jan 12 10:23 ../
+drwxr-xr-x 1 sanje 197609 0 Jan 12 10:34 Projects/
+drwxr-xr-x 1 sanje 197609 0 Jan 11 16:06 Testing1/
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git
+$ cd Projects
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch 'develop'
+fatal: Not a valid object name: 'master'.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch -a develop
+fatal: -a and -r options to 'git branch' do not make sense with a branch name
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git remote -v
+origin  git@github.com:sanjeevareddy229/Projects.git (fetch)
+origin  git@github.com:sanjeevareddy229/Projects.git (push)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch -a
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch -a
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git remote -v
+origin  git@github.com:sanjeevareddy229/Projects.git (fetch)
+origin  git@github.com:sanjeevareddy229/Projects.git (push)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch --help
+Launching default browser to display HTML ...
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git checkout -a 'develop'
+error: unknown switch `a'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -q, --quiet           suppress progress reporting
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --detach              detach the HEAD at named commit
+    -t, --track           set upstream info for new branch
+    --orphan <new-branch>
+                          new unparented branch
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -f, --force           force checkout (throw away local modifications)
+    -m, --merge           perform a 3-way merge with the new branch
+    --overwrite-ignore    update ignored files (default)
+    --conflict <style>    conflict style (merge or diff3)
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    --progress            force progress reporting
+
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git checkout -b 'develop'
+Switched to a new branch 'develop'
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git status
+On branch develop
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git add .
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git add .
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ ls -la
+total 5
+drwxr-xr-x 1 sanje 197609  0 Jan 12 10:41 ./
+drwxr-xr-x 1 sanje 197609  0 Jan 12 10:34 ../
+drwxr-xr-x 1 sanje 197609  0 Jan 12 10:41 .git/
+-rw-r--r-- 1 sanje 197609 26 Jan 11 16:10 Test1.txt
+-rw-r--r-- 1 sanje 197609  0 Jan 11 16:03 Test2.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git commit -m "First commit"
+[develop (root-commit) d9169c2] First commit
+ 2 files changed, 3 insertions(+)
+ create mode 100644 Test1.txt
+ create mode 100644 Test2.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git push origin develop
+Warning: Permanently added the RSA host key for IP address '192.30.253.112' to the list of known hosts.
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 276 bytes | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To git@github.com:sanjeevareddy229/Projects.git
+ * [new branch]      develop -> develop
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ ls -la
+total 5
+drwxr-xr-x 1 sanje 197609  0 Jan 12 10:41 ./
+drwxr-xr-x 1 sanje 197609  0 Jan 12 10:34 ../
+drwxr-xr-x 1 sanje 197609  0 Jan 12 10:42 .git/
+-rw-r--r-- 1 sanje 197609 26 Jan 11 16:10 Test1.txt
+-rw-r--r-- 1 sanje 197609  0 Jan 11 16:03 Test2.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git branch -a
+* develop
+  remotes/origin/develop
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git diff
+diff --git a/Test2.txt b/Test2.txt
+index e69de29..be3cc0d 100644
+--- a/Test2.txt
++++ b/Test2.txt
+@@ -0,0 +1 @@
++I am Sanjeeva Testing the Test2 Project for the second commit
+\ No newline at end of file
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git diff
+diff --git a/Test2.txt b/Test2.txt
+index e69de29..7b4db50 100644
+--- a/Test2.txt
++++ b/Test2.txt
+@@ -0,0 +1,2 @@
++I am Sanjeeva Testing the Test2 Project for the second commit
++. Let's do it
+\ No newline at end of file
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git add -A
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git status
+On branch develop
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   Test2.txt
+
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git commit -m "Second commit"
+[develop 55e64c8] Second commit
+ 1 file changed, 2 insertions(+)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git pull origin develop
+From github.com:sanjeevareddy229/Projects
+ * branch            develop    -> FETCH_HEAD
+Already up-to-date.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git push origin develop
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 342 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:sanjeevareddy229/Projects.git
+   d9169c2..55e64c8  develop -> develop
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git branch
+* develop
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git push -u origin develop1
+error: src refspec develop1 does not match any.
+error: failed to push some refs to 'git@github.com:sanjeevareddy229/Projects.git'
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git fetch
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git checkout origin/master
+error: pathspec 'origin/master' did not match any file(s) known to git.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git checkou origin/master
+git: 'checkou' is not a git command. See 'git --help'.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git remote update
+Fetching origin
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git fetch
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git checkout --track origin/master
+fatal: Cannot update paths and switch to branch 'master' at the same time.
+Did you intend to checkout 'origin/master' which can not be resolved as commit?
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git status
+On branch develop
+nothing to commit, working directory clean
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git remote update
+Fetching origin
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git fetch
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git checkout -b master
+Switched to a new branch 'master'
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch list
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch
+  develop
+  list
+* master
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch -a
+  develop
+  list
+* master
+  remotes/origin/develop
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch -d list
+Deleted branch list (was 55e64c8).
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch -a
+  develop
+* master
+  remotes/origin/develop
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch -d list
