@@ -319,4 +319,640 @@ $ git branch -a
   remotes/origin/develop
 
 sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
-$ git branch -d list
+$ ^Ct branch -d list
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git pull origin master
+fatal: Couldn't find remote ref master
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git checkout master
+Already on 'master'
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git checkout develop
+Switched to branch 'develop'
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git pull origin develop
+From github.com:sanjeevareddy229/Projects
+ * branch            develop    -> FETCH_HEAD
+Already up-to-date.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git branch --merged
+* develop
+  master
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git branch
+* develop
+  master
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git checkout master
+Switched to branch 'master'
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch test1
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git checkout test1
+Switched to branch 'test1'
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (test1)
+$ git status
+On branch test1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        GitCommands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (test1)
+$ git status
+On branch test1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   Test2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        GitCommands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (test1)
+$ git add .
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (test1)
+$ git commit -m "third commit"
+[test1 310cb63] third commit
+ 2 files changed, 325 insertions(+), 1 deletion(-)
+ create mode 100644 GitCommands.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (test1)
+$ git pull origin test1
+fatal: Couldn't find remote ref test1
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (test1)
+$ git push -u origin test1
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 2.62 KiB | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'test1' on GitHub by visiting:
+remote:      https://github.com/sanjeevareddy229/Projects/pull/new/test1
+remote:
+To git@github.com:sanjeevareddy229/Projects.git
+ * [new branch]      test1 -> test1
+Branch test1 set up to track remote branch test1 from origin.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (test1)
+$ it checkout master
+bash: it: command not found
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (test1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git pull origin master
+fatal: Couldn't find remote ref master
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git pull origin master
+fatal: Couldn't find remote ref master
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git checkout develop
+Switched to branch 'develop'
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (develop)
+$ git checkout test1
+Switched to branch 'test1'
+Your branch is up-to-date with 'origin/test1'.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (test1)
+$ git pull origin test1
+From github.com:sanjeevareddy229/Projects
+ * branch            test1      -> FETCH_HEAD
+Already up-to-date.
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (test1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git merge test1
+Updating 55e64c8..310cb63
+Fast-forward
+ GitCommands.txt | 322 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Test2.txt       |   4 +-
+ 2 files changed, 325 insertions(+), 1 deletion(-)
+ create mode 100644 GitCommands.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/sanjeevareddy229/Projects/pull/new/master
+remote:
+To git@github.com:sanjeevareddy229/Projects.git
+ * [new branch]      master -> master
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ ls -la
+total 18
+drwxr-xr-x 1 sanje 197609     0 Jan 12 12:38 ./
+drwxr-xr-x 1 sanje 197609     0 Jan 12 10:34 ../
+drwxr-xr-x 1 sanje 197609     0 Jan 12 12:38 .git/
+-rw-r--r-- 1 sanje 197609 10809 Jan 12 12:38 GitCommands.txt
+-rw-r--r-- 1 sanje 197609    26 Jan 11 16:10 Test1.txt
+-rw-r--r-- 1 sanje 197609   102 Jan 12 12:38 Test2.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git log
+commit 310cb638a4f2ceccc793ab897b026c074ce832d6
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:34:48 2019 -0500
+
+    third commit
+
+commit 55e64c83b5858928ce16211315a97399f2737d1c
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 11:15:03 2019 -0500
+
+    Second commit
+
+commit d9169c21f8f362dbc0675678ba2d9e773ce96f6e
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 10:42:16 2019 -0500
+
+    First commit
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch
+  develop
+* master
+  test1
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git diff
+diff --git a/Test2.txt b/Test2.txt
+index 73ed0b0..b6ae5a0 100644
+--- a/Test2.txt
++++ b/Test2.txt
+@@ -1,4 +1,8 @@
+ I am Sanjeeva Testing the Test2 Project for the second commit
+ . Let's do it
+
+-Final testing for GIT
+\ No newline at end of file
++Final testing for GIT
++
++
++
++Modified test file
+\ No newline at end of file
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ fit checkout Test2.txt
+bash: fit: command not found
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git checkout Test2.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git diff
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+Did you mean this?
+        status
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   Test2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git add .
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git commit -m "This is message reset test"
+[master 15cf27f] This is message reset test
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git log
+commit 15cf27fea5212e10cb4d5e97f6a87b5c00f98a3c
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:53:08 2019 -0500
+
+    This is message reset test
+
+commit 310cb638a4f2ceccc793ab897b026c074ce832d6
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:34:48 2019 -0500
+
+    third commit
+
+commit 55e64c83b5858928ce16211315a97399f2737d1c
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 11:15:03 2019 -0500
+
+    Second commit
+
+commit d9169c21f8f362dbc0675678ba2d9e773ce96f6e
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 10:42:16 2019 -0500
+
+    First commit
+:
+
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git log
+commit 15cf27fea5212e10cb4d5e97f6a87b5c00f98a3c
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:53:08 2019 -0500
+
+    This is message reset test
+
+commit 310cb638a4f2ceccc793ab897b026c074ce832d6
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:34:48 2019 -0500
+
+    third commit
+
+commit 55e64c83b5858928ce16211315a97399f2737d1c
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 11:15:03 2019 -0500
+
+    Second commit
+
+commit d9169c21f8f362dbc0675678ba2d9e773ce96f6e
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 10:42:16 2019 -0500
+
+    First commit
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git commit --amend -m "You see reseteed message now Test Sucess "
+[master 322e5bc] You see reseteed message now Test Sucess
+ Date: Sat Jan 12 12:53:08 2019 -0500
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git log
+commit 322e5bc79da1c32f151728c8c5c1ff6784cce792
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:53:08 2019 -0500
+
+    You see reseteed message now Test Sucess
+
+commit 310cb638a4f2ceccc793ab897b026c074ce832d6
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:34:48 2019 -0500
+
+    third commit
+
+commit 55e64c83b5858928ce16211315a97399f2737d1c
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 11:15:03 2019 -0500
+
+    Second commit
+
+commit d9169c21f8f362dbc0675678ba2d9e773ce96f6e
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 10:42:16 2019 -0500
+
+    First commit
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Test3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git add Test3
+fatal: pathspec 'Test3' did not match any files
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git add Test3.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git commit --amend
+[master 890b761] You see reseteed message now Test Sucess
+ Date: Sat Jan 12 12:53:08 2019 -0500
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 Test3.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git log
+commit 890b76147f8f25638459ed734fe64ae93b2ed5a7
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:53:08 2019 -0500
+
+    You see reseteed message now Test Sucess
+
+commit 310cb638a4f2ceccc793ab897b026c074ce832d6
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:34:48 2019 -0500
+
+    third commit
+
+commit 55e64c83b5858928ce16211315a97399f2737d1c
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 11:15:03 2019 -0500
+
+    Second commit
+
+commit d9169c21f8f362dbc0675678ba2d9e773ce96f6e
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 10:42:16 2019 -0500
+
+    First commit
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git log --stat
+commit 890b76147f8f25638459ed734fe64ae93b2ed5a7
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:53:08 2019 -0500
+
+    You see reseteed message now Test Sucess
+
+ Test2.txt | 4 +++-
+ Test3.txt | 0
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+commit 310cb638a4f2ceccc793ab897b026c074ce832d6
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:34:48 2019 -0500
+
+    third commit
+
+ GitCommands.txt | 322 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Test2.txt       |   4 +-
+ 2 files changed, 325 insertions(+), 1 deletion(-)
+
+commit 55e64c83b5858928ce16211315a97399f2737d1c
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 11:15:03 2019 -0500
+
+    Second commit
+
+ Test2.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit d9169c21f8f362dbc0675678ba2d9e773ce96f6e
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 10:42:16 2019 -0500
+
+    First commit
+
+ Test1.txt | 3 +++
+ Test2.txt | 0
+ 2 files changed, 3 insertions(+)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch
+  develop
+* master
+  test1
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git commit --amend
+[master b4a6d92] You see reseteed message now Test Sucess
+ Date: Sat Jan 12 12:53:08 2019 -0500
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 Test3.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ ls -la
+total 22
+drwxr-xr-x 1 sanje 197609     0 Jan 12 12:57 ./
+drwxr-xr-x 1 sanje 197609     0 Jan 12 10:34 ../
+drwxr-xr-x 1 sanje 197609     0 Jan 12 13:05 .git/
+-rw-r--r-- 1 sanje 197609 10809 Jan 12 12:38 GitCommands.txt
+-rw-r--r-- 1 sanje 197609    26 Jan 11 16:10 Test1.txt
+-rw-r--r-- 1 sanje 197609   126 Jan 12 12:51 Test2.txt
+-rw-r--r-- 1 sanje 197609     0 Jan 12 12:57 Test3.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git branch
+  develop
+* master
+  test1
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   Test2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git diff
+diff --git a/Test2.txt b/Test2.txt
+index 1a64e6a..552006c 100644
+--- a/Test2.txt
++++ b/Test2.txt
+@@ -3,4 +3,6 @@ I am Sanjeeva Testing the Test2 Project for the second commit
+
+ Final testing for GIT
+
+-Actaually to commit
+\ No newline at end of file
++Actaually to commit
++
++dfsdfsfsfsdf
+\ No newline at end of file
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git checkout Test2.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git diff
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git commit -m "Test2 commit message wrong"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+        modified:   Test2.txt
+
+no changes added to commit
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git diff
+diff --git a/Test2.txt b/Test2.txt
+index 1a64e6a..00800be 100644
+--- a/Test2.txt
++++ b/Test2.txt
+@@ -3,4 +3,6 @@ I am Sanjeeva Testing the Test2 Project for the second commit
+
+ Final testing for GIT
+
+-Actaually to commit
+\ No newline at end of file
++Actaually to commit
++
++efdfdfdfs
+\ No newline at end of file
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git log
+commit b4a6d9215009a38d1c13216df7a2d3e029098a82
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:53:08 2019 -0500
+
+    You see reseteed message now Test Sucess
+
+commit 310cb638a4f2ceccc793ab897b026c074ce832d6
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:34:48 2019 -0500
+
+    third commit
+
+commit 55e64c83b5858928ce16211315a97399f2737d1c
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 11:15:03 2019 -0500
+
+    Second commit
+
+commit d9169c21f8f362dbc0675678ba2d9e773ce96f6e
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 10:42:16 2019 -0500
+
+    First commit
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   Test2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git add Test2.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git commit -m "Bad commit message is given "
+[master f2b97fa] Bad commit message is given
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git diff
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git commit --amend -m "Completed the Bad message test"
+[master e75f62a] Completed the Bad message test
+ Date: Sat Jan 12 15:43:58 2019 -0500
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git log
+commit e75f62a6944dcfd176f33049462e1a51e08c0353
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 15:43:58 2019 -0500
+
+    Completed the Bad message test
+
+commit b4a6d9215009a38d1c13216df7a2d3e029098a82
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:53:08 2019 -0500
+
+    You see reseteed message now Test Sucess
+
+commit 310cb638a4f2ceccc793ab897b026c074ce832d6
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 12:34:48 2019 -0500
+
+    third commit
+
+commit 55e64c83b5858928ce16211315a97399f2737d1c
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 11:15:03 2019 -0500
+
+    Second commit
+
+commit d9169c21f8f362dbc0675678ba2d9e773ce96f6e
+Author: schinn3 <sanjeevareddy229@gmail.com>
+Date:   Sat Jan 12 10:42:16 2019 -0500
+
+    First commit
+1
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git add Test4.txt
+
+sanje@LAPTOP-6SDS2CFL MINGW64 /c/my-git/Projects (master)
+$ git commit --amend
